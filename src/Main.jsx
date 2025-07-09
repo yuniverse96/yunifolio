@@ -14,7 +14,7 @@ function Main() {
     <Header />
     <main>
       <ScrollSection id="cover">
-        <Section title="Cover">
+        <Section>
           <Cover />
         </Section>
       </ScrollSection>
