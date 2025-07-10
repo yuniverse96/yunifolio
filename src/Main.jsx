@@ -1,42 +1,50 @@
 
 import './components/style/Common.css';
+import ReactFullpage from '@fullpage/react-fullpage';
 import Header from './components/Header';
-import ScrollSection from './components/ScrollSection';
-import Section from './components/Section';
+import SectionWrap from './components/Section';
 import Cover from './components/Cover';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import { Section } from 'react-fullpage';
 
 function Main() {
   return (
     <>
     <Header />
-    <main>
-      <ScrollSection id="cover">
-        <Section>
-          <Cover />
-        </Section>
-      </ScrollSection>
-      
-      <ScrollSection id="about">
-        <Section title="About">
-          <About />
-        </Section>
-      </ScrollSection>
+    <ReactFullpage 
+      credits={{ enabled: false }}
+      navigation
+      scrollingSpeed={700}
+      render={({fullpageApi}) => (
+        <ReactFullpage.Wrapper>
+          <div className='section' id='cover'>
+            <SectionWrap>
+               <Cover />
+            </SectionWrap>
+             
+          </div>
+          <div className='section' id='about'>
+              <SectionWrap>
+                <About />
+            </SectionWrap>
+          </div>
+          <div className='section' id='portfolio'>
+              <SectionWrap>
+                  <Portfolio />
+            </SectionWrap>
+          </div>
+          <div className='section' id='contact'>
+              <SectionWrap>
+                <Contact />
+            </SectionWrap>
+          </div>
+        </ReactFullpage.Wrapper>
+      )}
+    >
 
-      <ScrollSection id="portfolio">
-        <Section title="Portfolio">
-          <Portfolio />
-        </Section>
-      </ScrollSection>
-
-      <ScrollSection id="contact">
-        <Section title="Contact">
-          <Contact />
-        </Section>
-      </ScrollSection>
-    </main>
+    </ReactFullpage>
   </>
   );
 }

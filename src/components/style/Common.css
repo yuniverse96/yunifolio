@@ -1,3 +1,4 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 #header {width: 100vw; height: 60px; display: flex; padding: 20px 16px; position: fixed; top: 0; left: 0; }
-.scroll_wrap {width: 100vw; height: 100vh; padding: 8vh 10vw;}
+.fp-watermark {display: none !important; opacity: 0 !important; visibility: hidden !important;}
+.section_wrap {width: 100%; height: 100%; padding: 8vw 10vw;}
