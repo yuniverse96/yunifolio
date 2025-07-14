@@ -11,12 +11,12 @@
     font-style: normal;
 }
 
-* {margin: 0; padding: 0; box-sizing: border-box; cursor: none;}
+* {margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
 .cursor { position: fixed; background: #72bbff;width: 20px;height: 20px; margin: 0; border-radius: 50%; will-change: transform; user-select: none; pointer-events: none; z-index: 10000; transition: background-color linear 0.2s;}
 
 #header {width: 100vw; height: 60px; display: flex; z-index: 999; align-items: center; padding: 20px 16px; position: fixed; top: 0; left: 0; }
 #header .logo {font-family: 'PFStardustExtraBold',sans-serif; font-size: 22px; line-height: normal; letter-spacing: -0.195px; transition: all linear 0.2s;  }
-#header nav {margin-left: auto; display: flex; align-items: center; gap: 20px; transition: all linear 0.2s;}
+#header nav {font-family: 'Pretendard-Regular',sans-serif; margin-left: auto; display: flex; align-items: center; gap: 20px; transition: all linear 0.2s;}
 #header nav:has(a:hover) {gap: 30px;}
 #header nav a {font-size: 15px; text-decoration: none; transition: all linear 0.2s;}
 #header nav a:hover{transform: scale(1.5); font-weight: bold;}
@@ -37,4 +37,23 @@
 #cover ::selection { color: #fff; background: #72bbff; }
 
 
-#about {background-color: #72bbff;}
+#about {background-color: #72bbff; font-family: 'Pretendard-Regular',sans-serif; }
+#about .section_wrap {display: grid;
+    height: 100%;
+    gap: 20px;
+    grid-template-columns: 1fr 3fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "profile_box all_info all_info"
+      "txt_box all_info all_info"
+      "txt_box all_info all_info"
+      "txt_box all_info all_info";
+    }
+#about .profile_box {width: auto; position: relative;  grid-area: profile_box;}
+#about .profile_box .bubble { background-color: #fff; border-radius: 8px; min-width: 100%; color: #72bbff; font-size: 22px; font-weight: 600; line-height: normal; letter-spacing: -0.195px; padding: 10px 15px 8px; position: absolute;}
+
+#about .profile_box .img_wrap {width: 100%; height: auto; padding-top: 30px; overflow: hidden;}
+#about .profile_box .img_wrap >img {width: 100%; height: auto;}
+
+#about .txt_box { grid-area: txt_box; background-color: rgba(255, 255, 255, 0.5); border-radius: 8px; padding: 10px 15px;} 
+#about .all_info { grid-area: all_info; background-color: #fff; border-radius: 8px;}

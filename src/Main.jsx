@@ -1,3 +1,4 @@
+import './components/style/Reset.css';
 import './components/style/Common.css';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from './components/Header';
