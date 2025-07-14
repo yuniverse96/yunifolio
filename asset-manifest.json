@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/yunifolio/static/css/main.384c5ac7.css",
-    "main.js": "/yunifolio/static/js/main.86f9750d.js",
+    "main.css": "/yunifolio/static/css/main.96414114.css",
+    "main.js": "/yunifolio/static/js/main.e1902e51.js",
     "index.html": "/yunifolio/index.html",
-    "main.384c5ac7.css.map": "/yunifolio/static/css/main.384c5ac7.css.map",
-    "main.86f9750d.js.map": "/yunifolio/static/js/main.86f9750d.js.map"
+    "main.96414114.css.map": "/yunifolio/static/css/main.96414114.css.map",
+    "main.e1902e51.js.map": "/yunifolio/static/js/main.e1902e51.js.map"
   },
   "entrypoints": [
-    "static/css/main.384c5ac7.css",
-    "static/js/main.86f9750d.js"
+    "static/css/main.96414114.css",
+    "static/js/main.e1902e51.js"
   ]
 }
