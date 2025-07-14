@@ -8,7 +8,7 @@ const About = () => {
     <div className="profile_box">
       <div className='bubble'> <Typewriter
         options={{
-          strings: ['Hi, I’m Yuni!', 'I’m a web publisher.','안녕하세요 이지윤입니다.'],
+          strings: ['안녕하세요 이지윤입니다.','6년차 퍼블리셔','빠른 러너 & 학습러'],
           autoStart: true,
           loop: true,
           delay: 75,
