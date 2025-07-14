@@ -1,4 +1,3 @@
-
 import './components/style/Common.css';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Header from './components/Header';
@@ -7,49 +6,69 @@ import Cover from './components/Cover';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
-import { Section } from 'react-fullpage';
+import { useState } from 'react';
+import CustomCursor from './components/Cursor';
 
 function Main() {
+  const [cursorColor, setCursorColor] = useState("#72bbff");
+
+  const handleLeave = (origin, destination) => {
+    const destId = destination.item.id;
+
+    switch (destId) {
+      case 'cover':
+      default:
+        setCursorColor("#72bbff");
+        break;
+      case 'about':
+        setCursorColor("#fff");
+        break;
+      case 'portfolio':
+        setCursorColor("#588e34");
+        break;
+      case 'contact':
+        setCursorColor("#ffc4bc");
+        break;
+      
+    }
+  };
+
   return (
     <>
-    <Header />
-    <ReactFullpage 
-      credits={{ enabled: false }}
-      navigation
-      scrollingSpeed={700}
-      render={({fullpageApi}) => (
-        <ReactFullpage.Wrapper>
-          <div className='section' id='cover'>
-            <SectionWrap>
-               <Cover />
-            </SectionWrap>
-             
-          </div>
-          <div className='section' id='about'>
+      <CustomCursor color={cursorColor} />
+      <Header />
+      <ReactFullpage
+        credits={{ enabled: false }}
+        navigation
+        scrollingSpeed={700}
+        onLeave={handleLeave}
+        render={() => (
+          <ReactFullpage.Wrapper>
+            <div className='section' id='cover'>
+              <SectionWrap>
+                <Cover />
+              </SectionWrap>
+            </div>
+            <div className='section' id='about'>
               <SectionWrap>
                 <About />
-            </SectionWrap>
-          </div>
-          <div className='section' id='portfolio'>
+              </SectionWrap>
+            </div>
+            <div className='section' id='portfolio'>
               <SectionWrap>
-                  <Portfolio />
-            </SectionWrap>
-          </div>
-          <div className='section' id='contact'>
+                <Portfolio />
+              </SectionWrap>
+            </div>
+            <div className='section' id='contact'>
               <SectionWrap>
                 <Contact />
-            </SectionWrap>
-          </div>
-        </ReactFullpage.Wrapper>
-      )}
-    >
-
-    </ReactFullpage>
-  </>
+              </SectionWrap>
+            </div>
+          </ReactFullpage.Wrapper>
+        )}
+      />
+    </>
   );
 }
 
 export default Main;
-
-
-
