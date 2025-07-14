@@ -1,33 +1,31 @@
 import { useEffect, useRef } from "react";
 
+
 const Cover = () => {
   const cursorRef = useRef(null);
   const shapeRefs = useRef([]);
+  const shapeSizes = useRef(getShapeSizes()); // 크기: vw → px 변환 저장용
   const cursorSize = 20;
-  const shapeSizes = [650, 440, 270]; // 각 쉐입 크기
-  const followSpeeds = [0.15, 0.1, 0.05]; // 각 쉐입별 lerp 속도
+  const followSpeeds = [0.15, 0.1, 0.05];
 
-  // 선형 보간 함수
+  // vw → px 변환
+  function getShapeSizes() {
+    const vw = window.innerWidth;
+    return [vw * 0.25, vw * 0.17, vw * 0.1]; // shape1~3 크기
+  }
+
+  // 보간 함수
   const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
   useEffect(() => {
-    let targetPositions = shapeSizes.map(() => ({ x: 0, y: 0 }));
-    let currentPositions = shapeSizes.map(() => ({ x: 0, y: 0 }));
+    let targetPositions = shapeSizes.current.map(() => ({ x: 0, y: 0 }));
+    let currentPositions = shapeSizes.current.map(() => ({ x: 0, y: 0 }));
 
     const moveShapes = () => {
       shapeRefs.current.forEach((shape, idx) => {
         const speed = followSpeeds[idx];
-
-        currentPositions[idx].x = lerp(
-          currentPositions[idx].x,
-          targetPositions[idx].x,
-          speed
-        );
-        currentPositions[idx].y = lerp(
-          currentPositions[idx].y,
-          targetPositions[idx].y,
-          speed
-        );
+        currentPositions[idx].x = lerp(currentPositions[idx].x, targetPositions[idx].x, speed);
+        currentPositions[idx].y = lerp(currentPositions[idx].y, targetPositions[idx].y, speed);
 
         shape.style.left = `${currentPositions[idx].x}px`;
         shape.style.top = `${currentPositions[idx].y}px`;
@@ -39,23 +37,34 @@ const Cover = () => {
     const handleMouseMove = (evt) => {
       const mouseX = evt.clientX;
       const mouseY = evt.clientY;
+    
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${mouseX - cursorSize / 2}px`;
+        cursorRef.current.style.top = `${mouseY - cursorSize / 2}px`;
+      }
+    
+      targetPositions = shapeRefs.current.map((shape) => {
+        const w = shape.offsetWidth;
+        const h = shape.offsetHeight;
+        return {
+          x: mouseX - w / 2,
+          y: mouseY - h / 2,
+        };
+      });
+    };
+    
 
-      // 커서는 즉시 따라감
-      cursorRef.current.style.left = `${mouseX - cursorSize / 2}px`;
-      cursorRef.current.style.top = `${mouseY - cursorSize / 2}px`;
-
-      // 도형은 천천히 따라감 (중심 보정)
-      targetPositions = shapeSizes.map((size) => ({
-        x: mouseX - size / 2,
-        y: mouseY - size / 2,
-      }));
+    const handleResize = () => {
+      shapeSizes.current = getShapeSizes();
     };
 
     document.body.addEventListener("mousemove", handleMouseMove);
-    moveShapes(); // 애니메이션 시작
+    window.addEventListener("resize", handleResize);
+    moveShapes();
 
     return () => {
       document.body.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

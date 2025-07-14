@@ -4,6 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 #header {width: 100vw; height: 60px; display: flex; z-index: 999; align-items: center; padding: 20px 16px; position: fixed; top: 0; left: 0; }
@@ -15,15 +21,15 @@
 .fp-overflow {width: 100%; height: 100%;}
 .section_wrap {width: 100%; height: 100%; padding: 8vw 10vw;}
 
-#cover {cursor: none;}
+#cover {cursor: none; font-family: 'RixInooAriDuriR',sans-serif;}
 #cover .shapes { position: relative; height: 100%; width: 100%; background: #72bbff; overflow: hidden;}
-#cover .shape {position: absolute; border-radius: 50%;margin : 0; will-change: transform;}
-#cover .shape-1 {background: #72bbff; width: 650px; height: 650px; }
-#cover .shape-2 { background: #ffe5e3; width: 440px; height: 440px;}
-#cover .shape-3 { background: #ffcc57; width: 270px; height: 270px;}
+#cover .shape {position: absolute; border-radius: 50%;margin : 0;   will-change: left, top;}
+#cover .shape-1 {background: #72bbff; width: 40vw; aspect-ratio: 1/1;}
+#cover .shape-2 { background: #588e34; width: 35vw; aspect-ratio: 1/1;}
+#cover .shape-3 { background: #ffc4bc; width: 15vw; aspect-ratio: 1/1;}
 #cover .text_wrap { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; mix-blend-mode: screen; }
-#cover h1 { font-size: clamp(100px, 10vw, 200px); color: #000; margin: 0; text-align: center; }
-#cover p { font-size: clamp(40px, 4vw, 80px);}
+#cover h1 { font-size: 10vw; color: #000; margin: 0; text-align: center; }
+#cover p { font-size: 4vw;}
 #cover .cursor { position: fixed; background: #72bbff;width: 20px;height: 20px; margin: 0; border-radius: 50%; will-change: transform; user-select: none; pointer-events: none; z-index: 10000;}
 #cover ::selection { color: #fff; background: #72bbff; }
   
