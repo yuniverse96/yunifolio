@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'Cafe24Meongi-W-v1.0';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-W-v1.0.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'PFStardustExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/PFStardustExtraBold.woff2') format('woff2');
+    font-weight: 800;
     font-style: normal;
 }
 @font-face {
@@ -12,10 +12,14 @@
 }
 
 * {margin: 0; padding: 0; box-sizing: border-box; cursor: none;}
-#header {width: 100vw; height: 60px; display: flex; z-index: 999; align-items: center; padding: 20px 16px; position: fixed; top: 0; left: 0; }
-#header .logo {font-family: 'Cafe24Meongi-W-v1.0',sans-serif; font-size: 36px; line-height: normal; letter-spacing: -0.195px;  }
-#header nav {margin-left: auto; display: flex; align-items: center; gap: 15px;}
+.cursor { position: fixed; background: #72bbff;width: 20px;height: 20px; margin: 0; border-radius: 50%; will-change: transform; user-select: none; pointer-events: none; z-index: 10000; transition: background-color linear 0.2s;}
 
+#header {width: 100vw; height: 60px; display: flex; z-index: 999; align-items: center; padding: 20px 16px; position: fixed; top: 0; left: 0; }
+#header .logo {font-family: 'PFStardustExtraBold',sans-serif; font-size: 22px; line-height: normal; letter-spacing: -0.195px; transition: all linear 0.2s;  }
+#header nav {margin-left: auto; display: flex; align-items: center; gap: 20px; transition: all linear 0.2s;}
+#header nav:has(a:hover) {gap: 30px;}
+#header nav a {font-size: 15px; text-decoration: none; transition: all linear 0.2s;}
+#header nav a:hover{transform: scale(1.5); font-weight: bold;}
 
 .fp-watermark {display: none !important; opacity: 0 !important; visibility: hidden !important;}
 .fp-overflow {width: 100%; height: 100%;}
@@ -30,7 +34,6 @@
 #cover .text_wrap { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; mix-blend-mode: screen; }
 #cover h1 { font-size: 10vw; color: #000; margin: 0; text-align: center; }
 #cover p { font-size: 4vw;}
-.cursor { position: fixed; background: #72bbff;width: 20px;height: 20px; margin: 0; border-radius: 50%; will-change: transform; user-select: none; pointer-events: none; z-index: 10000;}
 #cover ::selection { color: #fff; background: #72bbff; }
 
 

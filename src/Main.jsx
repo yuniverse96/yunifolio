@@ -11,6 +11,7 @@ import CustomCursor from './components/Cursor';
 
 function Main() {
   const [cursorColor, setCursorColor] = useState("#72bbff");
+  const [logoColor, setLogoColor] = useState("#72bbff");
 
   const handleLeave = (origin, destination) => {
     const destId = destination.item.id;
@@ -19,15 +20,19 @@ function Main() {
       case 'cover':
       default:
         setCursorColor("#72bbff");
+        setLogoColor("#72bbff");
         break;
       case 'about':
         setCursorColor("#fff");
+        setLogoColor("#fff");
         break;
       case 'portfolio':
         setCursorColor("#588e34");
+        setLogoColor("#588e34");
         break;
       case 'contact':
         setCursorColor("#ffc4bc");
+        setLogoColor("#ffc4bc");
         break;
       
     }
@@ -36,7 +41,7 @@ function Main() {
   return (
     <>
       <CustomCursor color={cursorColor} />
-      <Header />
+      <Header color = {logoColor} />
       <ReactFullpage
         credits={{ enabled: false }}
         navigation
