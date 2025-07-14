@@ -1,4 +1,29 @@
+@font-face {
+    font-family: 'Cafe24Meongi-W-v1.0';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-W-v1.0.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {margin: 0; padding: 0; box-sizing: border-box;}
-#header {width: 100vw; height: 60px; display: flex; padding: 20px 16px; position: fixed; top: 0; left: 0; }
+#header {width: 100vw; height: 60px; display: flex; z-index: 999; align-items: center; padding: 20px 16px; position: fixed; top: 0; left: 0; }
+#header .logo {font-family: 'Cafe24Meongi-W-v1.0',sans-serif; font-size: 36px; line-height: normal; letter-spacing: -0.195px;  }
+#header nav {margin-left: auto; display: flex; align-items: center; gap: 15px;}
+
+
 .fp-watermark {display: none !important; opacity: 0 !important; visibility: hidden !important;}
+.fp-overflow {width: 100%; height: 100%;}
 .section_wrap {width: 100%; height: 100%; padding: 8vw 10vw;}
+
+
+#cover .shapes { position: relative; height: 100%; width: 100%; background: #72bbff; overflow: hidden;}
+#cover .shape {position: absolute; border-radius: 50%; will-change: transform;}
+#cover .shape-1 {background: #72bbff; width: 650px; height: 650px; margin: -325px 0 0 -325px;}
+#cover .shape-2 { background: #ffe5e3; width: 440px; height: 440px; margin: -220px 0 0 -220px;}
+#cover .shape-3 { background: #ffcc57; width: 270px; height: 270px; margin: -135px 0 0 -135px;}
+#cover .text_wrap { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fff; mix-blend-mode: screen; }
+#cover h1 { font-size: clamp(100px, 10vw, 200px); color: #000; margin: 0; text-align: center; }
+#cover p { font-size: clamp(40px, 4vw, 80px);}
+#cover .cursor { position: fixed; background: #72bbff;width: 20px;height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; will-change: transform; user-select: none; pointer-events: none; z-index: 10000;}
+#cover ::selection { color: #fff; background: #72bbff; }
+  
