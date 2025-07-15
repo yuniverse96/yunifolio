@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Typewriter from 'typewriter-effect';
+import Chart from './Cart'; 
 
 const About = () => {
   return (
@@ -43,7 +44,9 @@ const About = () => {
         </ul>
       </ul>
     </div>
-    <div className='all_info'></div>
+    <div className='all_info'>
+      <Chart/>
+    </div>
 </div>
 
   

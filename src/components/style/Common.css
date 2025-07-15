@@ -67,4 +67,4 @@
 #about .profile_box .profile_img .name span {font-size: 14px; font-weight: 400; }
 
 #about .txt_box { grid-area: txt_box; background-color: rgba(255, 255, 255, 0.5); border-radius: 20px; padding: 40px 30px;} 
-#about .all_info { grid-area: all_info; background-color: #fff; border-radius: 20px;}
+#about .all_info { grid-area: all_info; background-color: #fff; border-radius: 20px; color: #3051ca;}

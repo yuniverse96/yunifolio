@@ -1,4 +1,4 @@
-function Section({ title, children }) {
+function Section({ children }) {
     return (
       <>
         <div className="section_wrap">{children}</div>
