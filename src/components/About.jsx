@@ -2,6 +2,7 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import Chart from './Cart'; 
+import StorageWidget from "./Storage";
 
 const About = ({ isActive }) => {
   return (
@@ -38,11 +39,18 @@ const About = ({ isActive }) => {
         
       </ul>
     </div>
+    
+    <div className='skill_box'>
+        <StorageWidget />
+    </div>
+
+
     <div className='all_info'>
         <div className='cart_wrap'>
-            <Chart visible={isActive} />
+     
+            {/* <Chart visible={isActive} /> */}
         </div>
-        
+       
     </div>
 </div>
 
