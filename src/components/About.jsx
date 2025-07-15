@@ -3,7 +3,7 @@ import React from 'react';
 import Typewriter from 'typewriter-effect';
 import Chart from './Cart'; 
 
-const About = () => {
+const About = ({ isActive }) => {
   return (
     <>
     <div className='circle dark'></div>
@@ -45,7 +45,7 @@ const About = () => {
       </ul>
     </div>
     <div className='all_info'>
-      <Chart/>
+        <Chart visible={isActive} />
     </div>
 </div>
 

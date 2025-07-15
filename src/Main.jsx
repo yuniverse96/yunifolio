@@ -13,9 +13,12 @@ import CustomCursor from './components/Cursor';
 function Main() {
   const [cursorColor, setCursorColor] = useState("#72bbff");
   const [logoColor, setLogoColor] = useState("#72bbff");
+  const [activeSection, setActiveSection] = useState("cover");
+
 
   const handleLeave = (origin, destination) => {
     const destId = destination.item.id;
+    setActiveSection(destId);
 
     switch (destId) {
       case 'cover':
@@ -57,7 +60,7 @@ function Main() {
             </div>
             <div className='section' id='about'>
               <SectionWrap>
-                <About />
+                <About isActive={activeSection === 'about'}/>
               </SectionWrap>
             </div>
             <div className='section' id='portfolio'>
