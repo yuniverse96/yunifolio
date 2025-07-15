@@ -24,8 +24,8 @@ function Main() {
         setLogoColor("#72bbff");
         break;
       case 'about':
-        setCursorColor("#fff");
-        setLogoColor("#fff");
+        setCursorColor("#266fb3");
+        setLogoColor("#266fb3");
         break;
       case 'portfolio':
         setCursorColor("#588e34");
