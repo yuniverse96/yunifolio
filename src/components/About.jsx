@@ -31,21 +31,18 @@ const About = ({ isActive }) => {
       </div>
    
     </div>
-     <div className='txt_box'>
+     <div className='career_box'>
       <ul>
-        <li>학력 : 방송통신대학교(컴퓨터과학) 재학중</li>
-        <li>경력 : 6년</li>
-        <ul>
-          <li>앱튜브</li>
-          <li>오감코퍼레이션</li>
-          <li>스타랩스</li>
-          <li>커뮤니케이션 앤 컬쳐</li>
-          <li>여행박사 (재직중)</li>
-        </ul>
+        <li><span>학력 : </span><p>방송통신대학교(컴퓨터과학) 재학중</p></li>
+        <li><span>경력 : </span><p> 총 6년</p></li>
+        
       </ul>
     </div>
     <div className='all_info'>
-        <Chart visible={isActive} />
+        <div className='cart_wrap'>
+            <Chart visible={isActive} />
+        </div>
+        
     </div>
 </div>
 
